@@ -32,7 +32,7 @@ module.exports = function (source) {
     _fs2.default.readdirSync(directory).forEach(function (file) {
       var fullPath = directory + "/" + file;
 
-      if (file === "index.js") {
+      if (["index.js", "index.tsx", "index.mdx"].includes(file)) {
         _this.dependency(fullPath);
 
         route.component = fullPath;
